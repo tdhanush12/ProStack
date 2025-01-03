@@ -1,0 +1,8 @@
+fp1=open("example.txt",'r')
+data=fp1.read()
+print(data)
+fp2=open("example1.txt","w")
+data=fp2.write("hello printout")
+print(data)
+fp1.close()
+fp2.close()

@@ -1,0 +1,7 @@
+fp=open("data.txt",'r')
+#data=fp.read()
+data=fp.readlines()
+#data=fp.readline()
+#data=fp.readable()
+print(data)
+fp.close()

@@ -1,0 +1,10 @@
+a=10
+b="dhanush"
+c=30.5
+d=True
+e=10+5j
+print(type(a))
+print(type(b))
+print(type(c))
+print(type(d))
+print(type(e))
