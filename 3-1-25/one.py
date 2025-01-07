@@ -1,5 +1,5 @@
 class employees:
-    c=300   #static variable
+    c=300  #static variable
     def m1(self):
         self.a=100 #instance variable
     def m2(self):
@@ -13,3 +13,4 @@ e2.m2()
 print(e1.__dict__)
 print(e2.__dict__)
 print(employees.__dict__)#class variable
+print(employees.__doc__)
