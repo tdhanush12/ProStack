@@ -1,8 +1,0 @@
-cmd> mysql -u root -p root
-mysql> system cls
-mysql>show databases (DBname)
-mysql>create table tablename
-mysql>desc tablename
-mysql>show table
-mysql>drop table (tablename)
-mysql>drop database (DBname)
