@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Address Form</title>
+<style>
+button {
+  background-color: #056fcd;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.button:hover{
+  background-color: #056fcd;
+}
+</style>
+</head>
+<body>
+
+    <button type="button">Use my current location</button><br><br>
+
+  <input type="text" placeholder="Name"> 
+  <input type="number" placeholder="10-digit mobile number"><br><br>
+  <input type="text" placeholder="Pincode">
+  <input type="text" placeholder="Locality"><br><br>
+  <textarea rows="10" cols="50" placeholder="Address(Area and Street)"></textarea><br><br>
+  <input type="text" id="city" name="city" placeholder="City/District/Town">
+  <select id="state" name="state">
+      <option value="" disabled selected>Select State</option>
+      <option value="state1">State 1</option>
+      <option value="state2">State 2</option>
+      <option value="state3">State 3</option>
+  </select>
+<br><br>
+<input type="text" placeholder="Landmark(optional)"/>
+<input type="text"  disabled placeholder="Alternate Phone(optional)"/><br><br>
+  <label>Address Type:</label><br>
+  <input type="radio" id="home" name="addressType" value="home">
+  <label for="home">Home</label>
+  <input type="radio" id="work" name="addressType" value="work">
+  <label for="work">Work</label><br>
+<br>
+  <div class="button-container">
+    <button type="submit">SAVE</button>
+    <button type="button" onclick="cancelForm()">CANCEL</button>
+  </body>
+</html>
