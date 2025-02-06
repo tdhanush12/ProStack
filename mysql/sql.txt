@@ -8,7 +8,31 @@ mysql>drop table (tablename)
 mysql>drop database (DBname)
 
 two types of data
-SQL
+SQL=WASTE OF MEMORY
 NoSQL
 
 RDBMS store a data in the form of row and colums
+
+NOSQL:=
+NOT ONLY SQL TO MAINTAIN RELATIONSHIP BETWEEN RDBMS
+
+Atomicity, Consistency, Isolation, and Durability
+
+SQL(ACID-properties)     NOSQL->OPEN SOURCE
+RDBMS		      NON-RDBMS(DOC BASED DATABASES)
+DATABASE(SCHEMA)      DATABASE(SCHEMA LESS)	      
+TABLE		      COLLECTION
+ROWS		      DOCUMENT(KEY VALUE PAIRS)
+COLUMN	              FIELD
+
+NOSQL:=WHEN WE DONT WANT TO MAINTAIN RELATION
+->OPEN SOURCE
+->DOCUMENT BASED DATABASE
+->SCHEMA LESS DB
+->KEY VALUE PAIRS
+->JSON DATA
+
+
+
+
+

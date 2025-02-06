@@ -1,14 +1,22 @@
-CREATE TABLE EMPLOYEE(
-EID INTEGER,
-ENAME VARCHAR(32),
-ESAL FLOAT,
-LOCATION VARCHAR(32));
+CREATE TABLE EMP(
+EID INTEGER NOT NULL,
+ENAME VARCHAR(32) UNIQUE,
+ESAL FLOAT CHECK(ESAL>=18000) NOT NULL,
+LOCATION VARCHAR(32) DEFAULT 'BANGALORE');
 
 VARCHAR DEFULT SIZE IS 256
 
 INSERT INTO EMPLOYEE VALUES(101,'Dhanush',55000.45,'BANGALORE');
 
 UPDATE EMPLOYEE SET LOCATION='NEW DELHI' WHERE LOCATION='NEW DEHIL';
+
+CREATE TABLE EMP(
+EID INTEGER PRIMARY KEY,
+ENAME VARCHAR(32) NOT NULL,
+ESAL FLOAT NOT NULL);
+
+
+
 
 
 CREATE TABLE products(
@@ -26,7 +34,7 @@ MYSQL CONSTRAINTS
 
 NOT NULL= NULL VALUES NOT ALLOWED BUT DUPLICATES ARE ALLOWED
 
-UNIQUE=DUPLICATES ARE NOT ALLOWED  BUT NULL VALUES ARE ALLOWED
+UNIQUE=DUPLICATES ARE NOT ALLOWED  BUT NULL VALUES ARE ALLOWED(multiple times allowed the null values)
 
 CHECK= CHECKING THE CONDITION
 
@@ -34,6 +42,166 @@ DEFAULT= DEFAULT VALUE
 
 PRIMARY KEY=NOTNULL +UNIQUE KEY
 
-FOREIGN KEY=REFERENCES INTEGRITY
+FOREIGN KEY= REFERENCES INTEGRITY
 
 INDEX=
+
+DATA TYPES 
+OPERATORS
+INBULT FUNCTIONS
+
+TABLE BUNIT
+
+CREATE TABLE BUNIT(
+bu_id INTEGER PRIMARY KEY,
+bu_uname VARCHAR(32) NOT NULL,
+bu_loc VARCHAR(32) NOT NULL
+);
+ EMP TABLE
+ 
+ CREATE TABLE EMP(
+EID INTEGER PRIMARY KEY,
+ENAME VARCHAR(32) NOT NULL,
+ESAL FLOAT CHECK(ESAL>=18000),
+b_id INTEGER,
+LOCATION VARCHAR(32) DEFAULT'BANGALORE',
+FOREIGN KEY(b_id) REFERENCES BUNIT(bu_id)
+);
+
+INSERT INTO BUNIT values(10,'ATT','USA'),
+INSERT INTO BUNIT values(11,'VODA','SPAIN'),
+INSERT INTO BUNIT values(12,'COLT','LONDAN'),
+INSERT INTO BUNIT values(13,'AIRTEL','INDIA');
+
+
+INSERT INTO EMP
+values
+(101,'Rahul',45000.45,11,'wayanad'),
+(102,'Sonia',55000.45,11,'New Delhi'),
+(103,'Priya',65000.45,11,'Noida'),
+(104,'Modi',85000.45,12,'New Delhi'),
+(105,'Amith',95000.45,12,'New Delhi'),
+(106,'Rajni',18000.45,13,'Chennai'),
+(107,'VS',25000.45,13,'Chennai'),
+(108,'Alia',35000.35,13,'Mumbai');
+
+
+SELECT * FROM EMP(ENAME,ESAL) FOREIGN KEY REFERENCES WHERE bunit=bu_uname;
+
+SELECT ename AS Emp_Name,
+	   esal AS Emp_Salary,
+	   bu_uname AS Business_Unit_Name
+
+	   FROM emp, bunit
+	   
+	   WHERE emp.b_id = bunit.bu_id;
+
+
+SELECT * FROM EMP WHERE ESAL<=40000;
+
+SELECT COUNT(eid) FROM EMP WHERE ESAL<=40000;
+
+
+SELECT * from EMP WHERE ENAME LIKE'R%';
+
+SELECT * FROM EMP WHERE ENAME LIKE'%I';
+
+Alter COMMAND:=
+
+ALTER TABLE EMP ADD LOC VARCHAR(32);
+
+ALTER TABLE EMP DROP LOC;
+
+ALTER TABLE EMP MODIFY COLUMN ESAL FLOAT;
+
+ALTER TABLE EMP ADD PRIMARY KEY(EID);
+
+ALTER TABLE EMP MODIFY ENAME VARCHAR(32) UNIQUE;
+
+ALTER TABLE EMP DROP PRIMARY KEY;
+
+ALTER TABLE EMP MODIFY ENAME VARCHAR(32);
+
+NOT NULL
+
+ALTER TABLE EMP
+RENAME COLUMN eid TO EID;
+
+ROLLBACK:=
+
+START TRANSCATION;
+
+SAVEPOINT SP1;
+
+DELETE THE DATA USING DELETE COMMAND;
+
+ROLLBACK TO SAVEPOINT SP1;
+
+BETWEEN
+==============================================================================================================
+JOINS:=
+
+INNER JOINS
+
+OUTER JOINS
+
+LEFT JOINS
+
+RIGHT JOINS
+
+CREATE TABLE customer(
+	cust_Id INT PRIMARY KEY,
+	cust_Name VARCHAR(32),
+	cust_Email VARCHAR(32),
+	cust_Mobile VARCHAR(32)
+);
+
+
+ create table orders(
+order_id int,
+order_details varchar(32),
+order_amount int,
+order_date date,
+cust_id int, 
+FOREIGN KEY(cust_id) REFERENCES CUSTOMER(cust_id));
+
+
+INSERT INTO customer
+VALUES
+(1,'Rahul','rg@gmail.com','9591619191'),
+(2,'Sonia','sg@gmail.com','9591619192'),
+(3,'Priyanka','pg@gmail.com','9591619193'),
+(4,'Modi','modi@pm.com','9591619194'),
+(5,'Amith','amith@pm.com','9591619195');
+
+INSERT INTO orders
+VALUES
+(101,'Marker Pends',300,'2025-01-21',1),
+(102,'Think Pad T',14300,'2025-01-22',2),
+(103,'Google Pixels',34500,'2025-01-23',3),
+(104,'Samsung Galaxy',45300,'2025-01-24',1),
+(105,'Golder Medal-E',600,'2025-01-25',2),
+(106,'Apple Pad',30000,'2025-01-26',3),
+(107,'Mouse - L',400,'2025-01-27',1),
+(108,'Mi 40 TV',21000,'2025-01-28',2),
+(109,'keyboard-2',600,'2025-01-29',3),
+(110,'Whiteboard-b',6900,'2025-01-30',5);
+
+DISPLAY customer IF ORDER EXISTS?
+SELECT * FROM CUSTOMER,ORDERS WHERE CUSTOMER.CUST_ID = ORDERS.CUST_ID;
+
+SELECT CUSTOMER.cust_Name,ORDERS.order_amount,orders.order_details from customer INNER JOIN ORDERS ON customer.CUST_ID=ORDERS.CUST_ID;
+==============================================================================================================
+
+DISPLAY ALL CUSTOMER AND THEIR ORDER DETAILS INCLUDING NULL VALUES?
+
+SELECT CUSTOMER.cust_Name,ORDERS.order_amount,orders.order_details FROM CUSTOMER RIGHT JOIN ORDERS ON customer.CUST_ID=ORDERS.CUST_ID;
+==============================================================================================================
+DISPLAY ALL ORDERS AND CUSTOMER INFO?
+SELECT CUSTOMER.cust_Name,ORDERS.order_amount,orders.order_details FROM CUSTOMER LEFT JOIN ORDERS ON customer.CUST_ID=ORDERS.CUST_ID;
+==============================================================================================================
+DISPLAY INCULDING NULL values
+
+SELECT *FROM customer c LEFT JOIN orders o ON  c.cust_Id=o.cust_Id;
+
+SELECT *FROM customer c RIGHT JOIN orders o ON  c.cust_Id=o.cust_Id;

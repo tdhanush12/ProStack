@@ -1,0 +1,20 @@
+alembic to use data maigration with out losssing data
+
+SQLALchemy DB Conn/multi conn esaylly
+
+pydantic is use for data valdation
+ 
+gunicorn prod level
+
+uvicorn dev level
+
+based on basemodel we can create shcema 
+
+serialzation request lo json change the one type of data
+into another type (dump)
+de(load)
+
+Async 
+ and await
+
+stack overflow

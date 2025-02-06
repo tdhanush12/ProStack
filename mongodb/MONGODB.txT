@@ -1,0 +1,96 @@
+CREATE
+USE 8AM;
+DB.CREATECOLLECTION('EMPOYEE')
+
+READ
+SHOW DATABASES;
+USE 8AM //SWITCHED
+SHOW COLLECTIONS
+
+
+show databases;
+use 8am;//create database
+db.createCollection('employees');
+show collections;
+db.employees.insertOne({"eid":101,"ename":"Rahul"});
+db.employees.insertMany([{"eid":102,"ename":"Manasa"},{"eid":103,"ename":"Vinoop"},{"eid":104,"ename":"Akshay"}]);
+db.employees.find();//display all the data
+db.employees.countDocuments();//count the number of documents
+In mockaroo download data(json file)
+and insert into mongodb collection users
+db.createCollection("users");
+db.users.insertMany(copy paste the mockaroo data);
+db.users.countDocuments();//500
+OR
+db.users.find().count();
+db.users.find({"gender":"Female"}).count();//display only female users
+
+
+db.employees.updateOne({name: 'Dhanush'},{
+ $set :{
+ age:28,
+ designation: 'Sr.SoftwareEngineer'
+ }
+ });
+ 
+db.emp.find({"gender":"Male"})
+db.emp.find({"gender":"Male"}).count()
+db.emp.find({"gender":"Female"}).count()
+db.emp.find({"gender":"Polygender"}).count()
+db.emp.find({"gender":"Bigender"}).count()
+
+display no OF Male/Female employees FROM China?
+
+SELECT COUNT(*) FROM employees
+WHERE gender="Male" AND country="China";
+
+
+db.employees.find({"gender":"Female", "country":"China"}).count()
+db.employees.find({"country":"China"}).count()
+
+db.employees.find({"$or":[{"gender":"Female"},{"country":"China"}]}).count()
+db.employees.find({"$and":[{"gender":"Female"},{"country":"China"}]}).count()
+
+
+db.employees.find({"esal":{"$gt":50000}})
+db.employees.find({"esal":{"$lt":50000}}).count()
+=========================================================================
+	UPDATE THE QUERY
+db.users.updateOne({'eid':101},{$set:{'ename':'RG'}});
+db.users.updateMany({},{'$set':{}});
+db.users.updateMany({},{'$set':{'uname':'Rahul Gandhi','loc':'Wayanad'}});
+
+===========================================================================
+Insert
+
+db.user.insertOne({});
+db.user.insertMany([{},{}]);
+=======================================================================
+db.user.find();
+=====================================================
+DELETE
+db.user.deleteOne();
+db.user.deleteMany();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

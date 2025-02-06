@@ -1,0 +1,32 @@
+create a crud project store in json file 
+there post api ,get by id api,get api list, put api, delete API
+
+folder 
+emp project/src floder/shcema.py
+
+main.py (returns)
+
+function files.../createemp.py(login)
+
+src file
+main.py
+shcema.py(class,import)
+function-floder
+store-floder
+
+
+''regex..''
+
+
+emp:
+id
+name
+
+how to insert/execrt data into json using python.
+regex
+what is pydantic?
+what is request/response.?
+what is shcema?data of joining
+what is function call?
+what to use Async and await?
+what is query parameter/path parameter?
