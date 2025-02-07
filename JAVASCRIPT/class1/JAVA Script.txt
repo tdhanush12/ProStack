@@ -75,5 +75,23 @@ IDENTIFIERS SHOULD NOT START WITH DIGITS 0-9
 IDENTIFIERS SHOULD NOT CONTAINS ANY SPECIAL CHAR/SYMBOLS(%,+,@,!)
 SHOULD NOT USE KEYWORDS/RERVERS-WORDS AS INDENTIFIERS NAMES
 CASE SENSITIVE
-
-	
+=================================================================================================================================================
+CLASS 3
+DIFFERENCE BETWEEN VAR AND LET
+                                       JAVA-SCRIPT(8 DATA-TYPE)
+  PRIMETIVE DATA-TYPE(7)								NON-PRIMETIVE DATA-TYPE(1)
+  HOLDING SINGLE VALUE									HOLDING MULTIPLE VALUE	
+  NUMBERS,STRING,BOOLEN										OBJECTS 
+  UNDEFINED,NULL,(SYMBOL,BIGINT(ES6))
+  
+JAVA-SCRIPT ARRAY AND OBJECT
+ARRAY=GROUP OF ELEMENTS
+OBJECT=GROUP OF KEY:VALUE PAIRS AS A ONE ENTITY
+=================================================================================================================================================
+JAVA SCRIPT KEYWORDS
+[VAR,LET,CONST,TRUE,FALSE,UNDEFINED] DATATYPES
+[IF SWITCH FOR IN DEFAULT CASE WHILE OF BREAK DO FUNCTION CONTINUE DEGUGGER RETURN WITH YEILD]CONTROL FLOW KEYWORDS
+[class new this extends SUPER ]oops
+[try catch finally throw throws]error handling
+[public private byte short int long protected] JAVA
+[import export async await]ES6
