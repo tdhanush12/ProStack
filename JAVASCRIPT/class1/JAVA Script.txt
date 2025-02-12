@@ -5,6 +5,9 @@ WEB INTERACTING
 -> CLIENT SIDE BUSINESS LOGIC
 -> CLIENT SIDE ACTIONS
 
+var local scope
+let,const function scope
+
 "NAME IN JS PROGRAM IS IDENTIFIERS"
  
 PY-35+1
@@ -95,3 +98,15 @@ JAVA SCRIPT KEYWORDS
 [try catch finally throw throws]error handling
 [public private byte short int long protected] JAVA
 [import export async await]ES6
+=================================================================================================================================================
+"ECMA" stood for "European Computer Manufacturers Association"=>ECMA=>ES 5,ES6=NULL&SYMBOL,ES16
+PSF-PYTHON SOFTWARE FOUNDATION=>PYTHON=>3.13
+SUN=>ORACLE CORP=>JAVA=>1.23
+
+init st, condition, incr/dicr st;
+forloop
+while
+do
+{
+}
+while()
