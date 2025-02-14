@@ -1,4 +1,4 @@
-// How to print object in browser/UI?
+// How to print object in browser Console?
 
 let obj={id:101,'name':'Dhanush'}
 console.log(obj.id)

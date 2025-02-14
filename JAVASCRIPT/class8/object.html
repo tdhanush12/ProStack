@@ -1,0 +1,20 @@
+<!-- How to print object in browser/UI? -->
+<html>
+    <head>
+        <title>Object</title>
+    </head>
+    <body>
+        <h2>Object:</h2>
+        <pre id="Output"></pre> <!--PREFORMATTED TEXT FOR BETTER READABILITY-->
+        <script>
+        let obj={
+            id:101,
+            'name':'Dhanush',
+             'age': 21,
+             'Location': 'Ananthapur'
+        };
+        //CONVERT OBJECT TO A STRING AND DISPLAY IT 
+        document.getElementById("Output").textContent = JSON.stringify(obj,null,2);
+        </script>
+    </body>
+</html> 
